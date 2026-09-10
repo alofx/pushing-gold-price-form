@@ -1,28 +1,27 @@
-# Pushing Gold product and price form
+# Pushing Gold pricing sheet
 
-A phone-friendly, single-file form for Jose to supply Shopify product options and pricing to Adrian at ALO Growth Solutions.
+Live: https://alofx.github.io/pushing-gold-price-form/
 
-Live form: https://alofx.github.io/pushing-gold-price-form/
+The sheet collects reusable variation pricing, not a catalog of individual products.
 
-## Filling it out
+## How to fill it out
 
-1. Enter your details and currency.
-2. Add one product entry per style, metal, and width. Width choices run from 4 through 36 mm, with Other for custom widths.
-3. Enter exact size prices, or choose a starting price with a fixed increase if that rule really applies. Add more sizes and products as needed.
-4. Describe what the price includes and add optional extra charges with their scope and charging method.
-5. Fill in timing and business rules.
-6. Download answers and attach the text file in a message to Adrian. Copy and Print / Save as PDF are alternatives.
+- Chains, bracelets and rings each have their own section.
+- Choose a metal and name the styles the prices cover.
+- Supply the smallest size, largest size and size increase.
+- Enter a width range such as 4-36 or a list such as 4, 6, 8. Click Show width rows once. Custom decimal widths and N/A are supported.
+- For each width sold, enter the complete smallest-size price and the amount added each size step. Leave other widths blank. Enter 0 only when there is no increase.
+- Add another metal rule only when needed. Filled width rows are preserved when changing the width list.
+- Use the separate extras table for standard locks, diamonds, rubies, sapphires, emeralds, rush orders and custom options. State the added price, charging method and exact scope. Explain included options and how extras combine so no charge is counted twice.
+- Explain exceptional sizes, weight-based pricing and custom products in the notes.
+- Download the answers and attach the text file in a message to Adrian. Copy and Print / Save as PDF are also available.
 
-Every field has a short instruction. Unknown and estimated amounts remain flagged for follow-up. No prices, weights, purities, availability, or policies are supplied as facts by the form.
+## Behavior
 
-## Saving and privacy
+No names, contact fields, currency selector, fulfillment questionnaire or large hero. All input fields have short instructions. The sheet has no backend, third-party scripts or automatic submission. Responses stay in localStorage on the same browser when available.
 
-Answers are stored in localStorage on the same browser when available. The form has no backend and does not submit or upload answers. Download an editable JSON backup to transfer work between devices. Opening a backup requires confirmation before replacing current answers. Downloaded text is a review document, not a Shopify import CSV.
+The text export includes entered pricing rules, extras, scope, missing information and review warnings. Straightforward valid size rules include a derived price list. Rows with exceptions and groups with notes are preserved for review without generating misleading derived prices. Blank prices never become zero. No Shopify data is modified by the form.
 
-The original PDF is preserved at `Pushing-Gold-Easy-Price-Form.pdf` and linked from the footer. Existing downloaded PDFs remain unchanged.
+Earlier version responses use a separate storage key and remain intact. A download button appears when earlier answers are found. The original PDF is also preserved and linked at the bottom.
 
-## Implementation
-
-`index.html` contains the complete UI, styling, and JavaScript. No build, account, third-party scripts, or dependencies are needed. GitHub Pages serves the default branch.
-
-Price-rule calculations require a valid positive size step and aligned endpoints. Skipped sizes must fall on the supplied steps. Invalid rules are reported rather than used to generate a price list. Calculated prices do not imply owner approval.
+`index.html` contains the complete form. No build step or dependencies are required. GitHub Pages serves the main branch.
